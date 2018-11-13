@@ -5,15 +5,8 @@ const settings = require("./settings");
 
 var knex = require('knex')({
   client: 'pg',
-  connection: {
-    host : settings.hostname,
-    user : settings.user,
-    password : settings.password,
-    database : settings.database
-  }
+  connection: settings
 });
-
-var pg = require('knex')({client: 'pg'});
 
 knex.select('*').from('famous_people')
 .where({first_name: userInput})

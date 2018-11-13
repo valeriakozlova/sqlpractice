@@ -4,12 +4,7 @@ var userInput = [args[0], args[1], args[2]];
 const settings = require("./settings");
 var knex = require('knex')({
   client: 'pg',
-  connection: {
-    host : settings.hostname,
-    user : settings.user,
-    password : settings.password,
-    database : settings.database
-  }
+  connection: settings
 });
 
 var pg = require('knex')({client: 'pg'});
