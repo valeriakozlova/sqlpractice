@@ -14,7 +14,7 @@ var knex = require('knex')({
 
 var pg = require('knex')({client: 'pg'});
 
-let userInput = { first_name: `${userInput[0]}`, last_name: `${userInput[1]}`, birthdate: `${userInput[2]}`};
+let userInput = { first_name: userInput[0], last_name: userInput[1], birthdate: userInput[2]};
 
 knex('famous_people')
 .insert(userInput).then(() => console.log("data inserted"))

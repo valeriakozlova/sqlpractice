@@ -17,7 +17,7 @@ client.connect((err) => {
   if (err) {
     return console.error("Connection Error", err);
   }
-  client.query(`SELECT * FROM famous_people where first_name = '${userInput}'`, (err, result) => {
+  client.query('SELECT * FROM famous_people where first_name = $1',[userInput],(err, result) => {
     console.log("Searching...");
     if (err) {
       return console.error("error running query", err);
